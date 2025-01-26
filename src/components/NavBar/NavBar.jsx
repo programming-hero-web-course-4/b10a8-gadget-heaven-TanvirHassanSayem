@@ -1,36 +1,32 @@
-import { useState } from "react";
-import Link from "../Link/link";
-import { CiMenuFries } from 'react-icons/ci';
-import { IoMdClose } from "react-icons/io";
-function NavBar() {
-    const routes = [
-        { id: 1, path: '/', name: 'Home' },
-        { id: 2, path: '/about', name: 'About Us' },
-        { id: 3, path: '/services', name: 'Services' },
-        { id: 4, path: '/contact', name: 'Contact' },
-        { id: 5, path: '/profile', name: 'Profile' }
-      ];
-      const [open,setOpen]= useState(false)
-    return (   
-   <nav className="text-black text-2xl p-6 bg-yellow-400 ">
-        <div  className="lg:hidden" onClick={() => setOpen(!open)}>
-        {
-            open===true ? <IoMdClose className="text-2xl"></IoMdClose>
-            :<CiMenuFries className="text-2xl "></CiMenuFries>
-        }
-        
-        </div>
-        
-        <ul className={`md:flex  absolute duration-1000 md:static  ${ open ? 'top-12' : '-top-60' }
-         bg-yellow-400 px-6 `}>
-            {
-                routes.map( route => <Link key={route.id}  route={route} > </Link>
-                    )
-            }
-        </ul>
-   </nav>
 
-  )
+function NavBar() {
+    return (
+        <div className="bg-purple-700 text-white font-sora flex-1">
+            <nav className="w-11/12 mx-auto py-2 flex justify-between items-center">
+                <div className="flex gap-2 items-center">
+                    <p id="ped" className="font-bold text-2xl text-white">Gadget Heaven</p>
+                </div>
+                <div>
+                    <ul className="flex justify-between gap-8">
+                        <li className="hover:font-extrabold  hover:underline">Home</li>
+                        <li className="hover:font-extrabold  hover:underline">Statistics</li>
+                        <li className="hover:font-extrabold  hover:underline">Dashboard</li>
+                    </ul>
+                </div>
+
+                <div className="w-20 flex justify-between gap-2">
+                    <div className="bg-white p-2 rounded-full shadow-lg">
+                        <img className="w-6 h-6" src="cart.png" alt="Cart" />
+                    </div>
+                    <div className="bg-white p-2 rounded-full shadow-lg">
+                        <img className="w-6 h-6" src="wishlist.png" alt="Wishlist" />
+                    </div>
+                </div>
+
+            </nav>
+        </div>
+
+    )
 }
 
 export default NavBar
