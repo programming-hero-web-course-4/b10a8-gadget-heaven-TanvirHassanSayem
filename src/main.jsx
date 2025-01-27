@@ -7,6 +7,7 @@ import ProductDetails from './Pages/ProductDetails/ProductDetails.jsx';
 import Cart from './Pages/Cart/Cart.jsx';
 import Wishlist from './Pages/Wishlist/Wishlist.jsx';
 import ErrorPage from './Pages/ErrorPage/ErrorPage.jsx';
+import AboutUs from './Pages/AboutUs/AboutUs.jsx'; // Import the new AboutUs component
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
   {
     path: "/wishlist",
     element: <Wishlist />,
+  },
+  {
+    path: "/about",  // New route for About Us page
+    element: <AboutUs />,  
   },
   {
     path: "/*",

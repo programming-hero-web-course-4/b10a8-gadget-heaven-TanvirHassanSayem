@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const ErrorPage = () => {
+      useEffect(() => {
+        document.title = "Gadget Heaven | Error Page";
+      }, [])
     return (
         <div className="flex flex-col items-center justify-center h-screen bg-gray-100 px-6">
             <div className="text-center">
@@ -18,11 +21,7 @@ const ErrorPage = () => {
                     Go Back Home
                 </button>
             </div>
-            <img
-                src="https://via.placeholder.com/400x300?text=Error+Page"
-                alt="Error Illustration"
-                className="w-80 mt-8"
-            />
+
         </div>
     );
 }

@@ -9,6 +9,9 @@ import { RandomContext } from "../../main";
 
 
 const Cart = () => {
+    useEffect(() => {
+        document.title = "Gadget Heaven | Cart"
+      }, [])
     const [totalPrice, setTotalPrice] = useState(0);
     const [wishListData, setWishListData] = useState([]);
     const navigate = useNavigate();
@@ -70,7 +73,7 @@ const Cart = () => {
                         <img src="Group.png" alt="" />
                     </div>
                     <h3 className="font-bold text-lg mt-4">Payment Successfully</h3>
-                    <p className="text-gray-500 mt-2">Thanks for purchasing.</p>
+                    <p className="text-gray-500 mt-2">Thanks for purchase.</p>
                     <p className="font-semibold mt-1">Total: ${totalPrice}</p>
                     <div className="modal-action mt-6">
                         <button className="btn  w-full" onClick={closeModal}>
