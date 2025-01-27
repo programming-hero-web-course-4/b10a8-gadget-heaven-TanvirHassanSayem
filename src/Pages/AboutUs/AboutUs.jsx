@@ -1,13 +1,39 @@
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
 
+import { RandomContext } from "../../main";
 
 const AboutUs = () => {
       useEffect(() => {
         document.title = "Gadget Heaven | About Us"
       }, [])
-    return (
 
-        
+      const { cartNo, wishNo } = useContext(RandomContext)
+    return (
+   <>
+        <div className="bg-white text-black font-sora flex-1">
+        <nav className="w-11/12 mx-auto py-2 flex justify-between items-center">
+          <div className="flex gap-2 items-center">
+            <p id="ped" className="font-bold text-2xl text-black  hover:text-purple-700 ">Gadget Heaven</p>
+          </div>
+          <div>
+            <ul className="flex justify-between gap-8">
+              <li>
+                <Link to={`/`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Home</Link>
+              </li>
+              <li>
+                <Link to={`/`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Statistics</Link>
+              </li>
+              <li>
+                <Link to={`/cart`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Dashboard</Link>
+              </li>
+            </ul>
+          </div>
+
+
+        </nav>
+      </div>
         <div className="bg-gray-100 py-10">
             <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg p-8">
                 <h2 className="text-3xl font-bold text-purple-600 text-center">About Us</h2>
@@ -26,6 +52,7 @@ const AboutUs = () => {
                 </ul>
             </div>
         </div>
+        </>
     );
 };
 
