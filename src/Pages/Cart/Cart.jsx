@@ -2,6 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
 import Footer from '../../components/Footer/Footer';
+import { useContext } from "react";
+
+import { RandomContext } from "../../main";
+
+
 
 const Cart = () => {
     const [totalPrice, setTotalPrice] = useState(0);
@@ -53,7 +58,7 @@ const Cart = () => {
         const sortedData = [...wishListData].sort((a, b) => b.price - a.price);
         setWishListData(sortedData);
     };
-
+    const { cartNo, wishNo } = useContext(RandomContext)
     return (
         <>
 
@@ -75,13 +80,37 @@ const Cart = () => {
                 </div>
             </dialog>
 
+            <div className="bg-white text-black font-sora flex-1">
+            <nav className="w-11/12 mx-auto py-2 flex justify-between items-center">
+                <div className="flex gap-2 items-center">
+                    <p id="ped" className="font-bold text-2xl text-black  hover:text-purple-700 ">Gadget Heaven</p>
+                </div>
+                <div>
+                    <ul className="flex justify-between gap-8">
+                        <li>
+                            <Link to={`/`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Home</Link>
+                        </li>
+                        <li>
+                            <Link to={`/`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Statistics</Link>
+                        </li>
+                        <li>
+                            <Link to={`/cart`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Dashboard</Link>
+                        </li>
+                    </ul>
+                </div>
 
-
-
-
-
-
-            <NavBar />
+                <div className="w-20 flex justify-between gap-2">
+                    <button className="bg-white p-2 rounded-full shadow-lg flex border-4">
+                        <img className="w-8 h-6" src="/cart.png" alt="Cart" /> 
+                        <div className="badge badge-secondary">{cartNo}</div>
+                    </button>
+                    <button className="bg-white p-2 rounded-full shadow-lg flex border-4">
+                        <img className="w-8 h-6" src="/wishlist.png" alt="Wishlist" /> 
+                        <div className="badge badge-secondary">{wishNo}</div>
+                    </button>
+                </div>
+            </nav>
+        </div>
             <div className="bg-gray-100 py-10">
                 <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg p-8">
                     <div className="bg-purple-600 text-center py-6 rounded-lg">

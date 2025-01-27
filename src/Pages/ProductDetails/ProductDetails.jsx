@@ -6,7 +6,11 @@ import { RandomContext } from "../../main";
 import { Data } from "../../data/data";
 import toast, { Toaster } from "react-hot-toast";
 
+import { Link } from "react-router-dom";
+
+
 const ProductDetails = () => {
+  
   const { id } = useParams();
   const { cartNo, wishNo, setWishNo, setCartNo } = useContext(RandomContext);
   const [data] = useState(Data);
@@ -54,7 +58,37 @@ const ProductDetails = () => {
 
   return (
     <>
-      <NavBar />
+      <div className="bg-white text-black font-sora flex-1">
+            <nav className="w-11/12 mx-auto py-2 flex justify-between items-center">
+                <div className="flex gap-2 items-center">
+                    <p id="ped" className="font-bold text-2xl text-black  hover:text-purple-700 ">Gadget Heaven</p>
+                </div>
+                <div>
+                    <ul className="flex justify-between gap-8">
+                        <li>
+                            <Link to={`/`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Home</Link>
+                        </li>
+                        <li>
+                            <Link to={`/`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Statistics</Link>
+                        </li>
+                        <li>
+                            <Link to={`/cart`} className="hover:font-extrabold hover:underline  hover:text-purple-700 ">Dashboard</Link>
+                        </li>
+                    </ul>
+                </div>
+
+                <div className="w-20 flex justify-between gap-2">
+                    <button className="bg-white p-2 rounded-full shadow-lg flex border-4">
+                        <img className="w-8 h-6" src="/cart.png" alt="Cart" /> 
+                        <div className="badge badge-secondary">{cartNo}</div>
+                    </button>
+                    <button className="bg-white p-2 rounded-full shadow-lg flex border-4">
+                        <img className="w-8 h-6" src="/wishlist.png" alt="Wishlist" /> 
+                        <div className="badge badge-secondary">{wishNo}</div>
+                    </button>
+                </div>
+            </nav>
+        </div>
       <Toaster position="top-right" reverseOrder={false} />
       {/* bannersection */}
 <div className="bg-gray-100 relative">
