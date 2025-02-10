@@ -12,7 +12,7 @@ const AboutUs = () => {
       const { cartNo, wishNo } = useContext(RandomContext)
     return (
    <>
-        <div className="bg-white text-black font-sora flex-1">
+        <div className="bg-white text-black font-sora flex-1 ">
         <nav className="w-11/12 mx-auto py-2 flex justify-between items-center">
           <div className="flex gap-2 items-center">
             <p id="ped" className="font-bold text-2xl text-black  hover:text-purple-700 ">Gadget Heaven</p>

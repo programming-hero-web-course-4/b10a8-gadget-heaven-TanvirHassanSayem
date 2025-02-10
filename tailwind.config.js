@@ -9,7 +9,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sora: ["Sora", "sans-serif"], // Add Sora to the font stack
+        sora: ["Sora", "sans-serif"], 
       },
     },
   },
